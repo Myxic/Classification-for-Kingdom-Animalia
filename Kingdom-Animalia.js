@@ -81,5 +81,7 @@ class Mammals extends Animalia{
 }
 
 
-Arthropoda.Greetings();
-Arthropoda.WarmBlood();
+const butterfly = new Arthropoda()
+
+butterfly.Greetings();
+console.log(butterfly.ColdBlood())
