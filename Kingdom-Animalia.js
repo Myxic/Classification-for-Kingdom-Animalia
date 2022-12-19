@@ -19,17 +19,23 @@ class Animalia{
     Greetings(){
         this.#Intro()
     };
-
+    Info(){
+        throw new Error("This method cannot be called by this instance")
+    };
     
 }
 
 
 class Arthropoda extends Animalia{
     HasBackBone(){
-        return "Arthropoda has no BackBone";
+        return "Arthropoda has no BackBone\n";
     }
     ColdBlood(){
         return "Arthropoda are ColdBlooded";
+    }
+    Info(){
+        this.Greetings()
+        console.log(` ${this.HasBackBone()}\n ${this.ColdBlood()}`);
     }
 }
 
@@ -41,6 +47,10 @@ class Fish extends Animalia{
     ColdBlood(){
         return "Fish are ColdBlooded"
     }
+    Info(){
+        this.Greetings()
+        console.log(` ${this.HasBackBone()}\n ${this.ColdBlood()}`);
+    }
 }
 
 
@@ -50,6 +60,10 @@ class Amphibia extends Animalia{
     }
     ColdBlood(){
         return "Amphibia are ColdBlooded"
+    }
+    Info(){
+        this.Greetings()
+        console.log(` ${this.HasBackBone()}\n ${this.ColdBlood()}`);
     }
 }
 
@@ -61,6 +75,10 @@ class Reptiles extends Animalia{
     ColdBlood(){
         return "Reptiles are ColdBlooded"
     }
+    Info(){
+        this.Greetings()
+        console.log(` ${this.HasBackBone()}\n ${this.ColdBlood()}`);
+    }
 }
 class AVES extends Animalia{
     HasBackBone(){
@@ -68,6 +86,10 @@ class AVES extends Animalia{
     }
     WarmBlood(){
         return "AVES is WarmBlooded"
+    }
+    Info(){
+        this.Greetings()
+        console.log(` ${this.HasBackBone()}\n ${this.WarmBlood()}`);
     }
 }
 
@@ -78,10 +100,26 @@ class Mammals extends Animalia{
     WarmBlood(){
         return "Mammals is WarmBlooded"
     }
+    Info(){
+        this.Greetings()
+        console.log(` ${this.HasBackBone()}\n ${this.WarmBlood()}`);
+    }
 }
 
 
 const butterfly = new Arthropoda()
 
-butterfly.Greetings();
-console.log(butterfly.ColdBlood())
+// butterfly.Greetings();
+// console.log(butterfly.ColdBlood());
+// console.log(butterfly.WarmBlood());
+butterfly.Info()
+
+const Goat = new Mammals();
+
+Goat.Info();
+
+try {
+    Goat.ColdBlood()
+} catch (error)  {
+    console.log(" not ColdBlooded ")
+}
