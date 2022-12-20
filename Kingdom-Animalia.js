@@ -109,10 +109,14 @@ class Mammals extends Animalia{
 
 const butterfly = new Arthropoda()
 
-// butterfly.Greetings();
-// console.log(butterfly.ColdBlood());
-// console.log(butterfly.WarmBlood());
-butterfly.Info()
+try{
+    butterfly.Greetings();
+    console.log(butterfly.ColdBlood());
+    console.log(butterfly.WarmBlood());
+    butterfly.Info();
+}catch(error){
+    console.log(`${error}`);
+}
 
 const Goat = new Mammals();
 
