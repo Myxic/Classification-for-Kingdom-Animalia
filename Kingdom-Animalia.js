@@ -5,16 +5,16 @@ class Animalia{
         }
     }
     #Intro(){
-        console.log("Welcome to Animalia")
+        console.log("Welcome to Kingdom Animalia")
     }; 
     HasBackBone(){
         throw new Error("This method cannot be called by this instance")  
     };
     ColdBlood(){
-        throw new Error("This method cannot be called by this instance")  
+        throw new Error("This method cannot be called by this instance because it is not ColdBlooded")  
     };
     WarmBlood(){
-        throw new Error("This method cannot be called by this instance")  
+        throw new Error("This method cannot be called by this instance because it is not WarmBlooded")  
     };
     Greetings(){
         this.#Intro()
@@ -108,22 +108,26 @@ class Mammals extends Animalia{
 
 
 const butterfly = new Arthropoda()
-
 try{
-    butterfly.Greetings();
-    console.log(butterfly.ColdBlood());
     console.log(butterfly.WarmBlood());
     butterfly.Info();
 }catch(error){
     console.log(`${error}`);
 }
 
+const snake = new Reptiles()
+
+try{
+    snake.Info();
+    snake.WarmBlood();
+}catch(error){
+    console.log(`${error}`);
+}
+
 const Goat = new Mammals();
-
-Goat.Info();
-
 try {
-    Goat.ColdBlood()
+    Goat.Info();
+    Goat.ColdBlood();
 } catch (error)  {
-    console.log(" not ColdBlooded ")
+    console.log(`${error}`);
 }
